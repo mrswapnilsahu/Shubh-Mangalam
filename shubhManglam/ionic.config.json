@@ -1,5 +1,7 @@
 {
   "name": "shubhManglam",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

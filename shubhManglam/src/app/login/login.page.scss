@@ -1,0 +1,114 @@
+ion-content {
+    --ion-background-color: linear-gradient(to right, #ff5588, #ff6666) !important;
+}
+
+.gradient{
+    --ion-background-color: linear-gradient(to right, #ff5588, #ff6666) !important;
+}
+
+.auth {
+    background: linear-gradient(to right, #ff5588, #ff6666) !important;
+    color: #ffffff !important;
+}
+
+.auth .brand-logo {
+    margin-bottom: 1rem;
+}
+
+.auth .brand-logo img {
+    width: 150px;
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    font-size: 1.13rem;
+    color: #ffffff;
+}
+
+h6 {
+    font-size: .9375rem;
+    line-height: 1.2;
+    margin-top: 0;
+    font-weight: 300 !important;
+    color: #ffffff;
+}
+
+.btn-facebook {
+    background: #3b579d;
+    color: #ffffff;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus {
+    background: #2d4278;
+    color: #ffffff;
+}
+
+.btn-facebook.btn-social-icon-text {
+    padding: 0 1.5rem 0 0;
+    background: #4e6ebd;
+}
+
+.btn-facebook.btn-social-icon-text i {
+    background: #3b579d;
+    padding: .75rem;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.auth .auth-form-light {
+    background: #ffffff;
+}
+
+.auth .auth-form-light select {
+    color: #c9c8c8;
+}
+
+.auth .auth-form-light .input-group .form-control:focus,
+.auth .auth-form-light .input-group .form-control:active {
+    border-color: #ebedf2;
+}
+
+.auth .brand-logo {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.auth .brand-logo img {
+    width: 150px;
+}
+
+.auth form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth form .form-group label {
+    font-size: .8125rem;
+}
+
+.auth form .form-group .form-control {
+    // background: transparent;
+    border-radius: 0;
+    font-size: .9375rem;
+}
+
+.auth form .auth-form-btn {
+    height: 50px;
+    line-height: 1.5;
+}
+
+.auth form .auth-link {
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+.auth form .auth-link:hover {
+    color: initial;
+}
+
+.box-shadow {
+    box-shadow: 0 3px 4px -3px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
