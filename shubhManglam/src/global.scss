@@ -31,6 +31,10 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
+ion-menu{
+  --width: 300px;
+}
+
 ion-header ion-toolbar:first-child {
   padding-top: var(--ion-safe-area-top,0) !important;
   background: linear-gradient(to right, #ff5588, #ff6666) !important;

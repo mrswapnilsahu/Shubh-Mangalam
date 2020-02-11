@@ -1,1 +1,22 @@
+ion-content img {
+    // min-width: 250px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 
+h5 {
+    font-weight: bold;
+}
+
+ion-button {
+    margin-bottom: 0px;
+    bottom: -6%;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.file-upload-wrapper {
+    margin-bottom: 5px;
+}
