@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_BASE_URL: 'http://www.sapientheights.net/api2/',
+  IMG_URL_CAT:  'http://daalmeals.website/app/categories/api/',
+  IMG_URL_PRO:  'http://daalmeals.website/app/api/uploads'
 };
 
 /*

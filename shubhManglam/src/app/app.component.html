@@ -2,16 +2,27 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay" side="end">
       <ion-content>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <mat-list role="list" id="list">
+            <mat-list-item>
+              <img width="60" src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-3.png">
+              <span id="nameId">John Doe</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item role="listitem" id="listItem" [routerDirection]="'root'" [routerLink]="['/login']">
+              <img src="https://img.icons8.com/cute-clipart/64/000000/login-rounded-right.png">
+              Login
+            </mat-list-item>
+            <mat-list-item role="listitem" id="listItem" [routerDirection]="'root'" [routerLink]="['/home']">
+              <img src="https://img.icons8.com/cute-clipart/64/000000/home.png">
+              Home
+            </mat-list-item>
+            <mat-list-item role="listitem" id="listItem" [routerDirection]="'root'" [routerLink]="['/list']">
+              <img src="https://img.icons8.com/cute-clipart/64/000000/add-property.png">
+              List property
+            </mat-list-item>
+          </mat-list>
+        </ion-menu-toggle>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

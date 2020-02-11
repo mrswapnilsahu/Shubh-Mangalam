@@ -1,27 +1,93 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Add Property
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  <span class="ion-text-center">
+    <img src="../../assets/imgs/list-property.png" alt="">
+  </span>
+  <h5 class="ion-text-center">
+    List Your Property
+  </h5>
+  <div class="ion-padding">
+    <mat-vertical-stepper>
+      <mat-step [completed]="false">
+        <ng-template matStepLabel>Property Details</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Enter Name Of Property"  [(ngModel)]="property.name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Amenities</mat-label>
+          <mat-select multiple [(ngModel)]="property.amenity" required>
+            <mat-option *ngFor="let item of amenityData;" value="{{ item.catId }}">{{ item.catName | titlecase }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Categories</mat-label>
+          <mat-select multiple [(ngModel)]="property.category" required>            
+            <mat-option *ngFor="let item of categoryData;" value="{{ item.catId }}">{{ item.catName | titlecase }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Area(sq. feets)" [(ngModel)]="property.area" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Contact</mat-label>
+          <input matInput [(ngModel)]="property.contact" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Enter short description" [(ngModel)]="property.description"></textarea>
+        </mat-form-field>
+      </mat-step>
+      <mat-step [completed]="false">
+        <ng-template matStepLabel>Fill Out Address</ng-template>
+        <mat-form-field>
+          <mat-label>State</mat-label>
+          <mat-select [(ngModel)]="property.state" required>
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <mat-select [(ngModel)]="property.city" required>
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Enter Full Address" [(ngModel)]="property.address" required></textarea>
+        </mat-form-field>
+      </mat-step>
+      <mat-step [completed]="false">
+        <ng-template matStepLabel>Upload Images</ng-template>
+        <div class="file-upload-wrapper">
+          <input type="file" name="files" (change)="upload($event)"/>
+        </div>
+        <span *ngIf="imgUploadSpinner">
+          <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
+        </span>
+        <span *ngIf="!imgUploadSpinner">
+          <ion-text color="success">{{ this.flag }}</ion-text> Choose an image to upload.
+        </span>
+      </mat-step>
+      <mat-step [completed]="false">
+        <ng-template matStepLabel>Done</ng-template>
+        <ion-button color="success" (click)="saveData()">Save</ion-button>
+        <ion-button color="danger" (click)="goToHome()">Back</ion-button>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
 </ion-content>
